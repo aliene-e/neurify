@@ -1,0 +1,23 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+.cache
+
+# Testing and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# VS Code workspace settings (optional)
+.vscode/
