@@ -61,7 +61,7 @@ def compute_valence_arousal(df):
 
 if __name__ == "__main__":
 
-    df = pd.read_csv("Shriya_Elaine_raw_muse_session.csv")
+    df = pd.read_csv("raw_data\Shriya_raw_test_muse_session.csv")
 
     valence, arousal = compute_valence_arousal(df)
 

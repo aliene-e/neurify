@@ -34,17 +34,6 @@ def get_track_uri(track_name, artist_name):
     else:
         return None
 
-
-# 3. Curated Song Database (Valence / Arousal Map)
-"""
-SONG_DATABASE = [
-    {"title": "Blinding Lights", "artist": "The Weeknd", "v": 0.334, "a": 0.73},
-    {"title": "In Paradisum", "artist": "Gabriel Fauré", "v": -0.743, "a": -0.372},
-    {"title": "Roommates", "artist": "Malcolm Todd", "v": 0.292, "a": -0.437},
-    {"title": "I Don't Like", "artist": "Chief Keef", "v": -0.416, "a": 0.844},
-]
-"""
-
 songs = pd.read_csv("dataset.csv")
 
 songs = songs[
@@ -106,4 +95,14 @@ if __name__ == "__main__":
     )
 
     track_uri = "spotify:track:" + track_id
-    sp.add_to_queue(track_uri)
+    
+    print("Track URI:", track_uri)
+
+    try:
+        print("Playback state:", sp.current_playback())
+        sp.add_to_queue(track_uri)
+        print("Queue request completed!")
+    except Exception as e:
+        print("Spotify error:", repr(e))
+    print(track_uri)
+    sp.add_to_queue("spotify:track:0TJHclrJINck2lURpgR1I8")
